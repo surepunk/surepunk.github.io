@@ -220,17 +220,28 @@
     color: #444;
   }
 
-  .footer-handle {
-    font-size: 13px;
-    letter-spacing: 2px;
-    color: var(--gray);
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
+.footer-socials {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
 
-  .footer-handle:hover {
-    color: var(--cream);
-  }
+.footer-socials a {
+  display: flex;
+  align-items: center;
+  color: var(--gray);
+  transition: color 0.2s ease;
+}
+
+.footer-socials a:hover {
+  color: var(--cream);
+}
+
+.footer-socials svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
 
   /* ——————————————————————————————————————— */
   /* MOBILE */
