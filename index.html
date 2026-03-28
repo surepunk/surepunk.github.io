@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SUREPUNK — AI Strategy at the Decisive Point</title>
+<meta name="description" content="AI strategy at the decisive point.">
+<style>
+  :root {
+    --black: #000000;
+    --cream: #FAF5EF;
+    --signal: #E63462;
+    --gray: #8C8C8C;
+    --dark-gray: #333333;
+    --light-gray: #E5E0DB;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: var(--black);
+    color: var(--cream);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* THE ONE DISRUPTION — a signal line bleeding across the composition */
+  .page::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 38%;
+    width: 2px;
+    height: 100vh;
+    background: var(--signal);
+    transform: rotate(4deg);
+    transform-origin: top center;
+    opacity: 0.18;
+    pointer-events: none;
+  }
+
+  /* ——————————————————————————————————————— */
+  /* LAYOUT */
+  /* ——————————————————————————————————————— */
+
+  .page {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    padding: 72px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+
+  /* ——————————————————————————————————————— */
+  /* HEADER — label + coordinates */
+  /* ——————————————————————————————————————— */
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0;
+  }
+
+  .header-label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+
+  .header-right {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gray);
+    text-align: right;
+  }
+
+  /* ——————————————————————————————————————— */
+  /* MAIN */
+  /* ——————————————————————————————————————— */
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 0 60px;
+    max-width: 900px;
+  }
+
+  /* ——————————————————————————————————————— */
+  /* LOGO */
+  /* ——————————————————————————————————————— */
+
+  .logo {
+    font-size: clamp(72px, 13vw, 160px);
+    font-weight: 700;
+    letter-spacing: -4px;
+    line-height: 0.88;
+    margin-bottom: 52px;
+    user-select: none;
+  }
+
+  .logo .sure {
+    color: var(--cream);
+    display: inline;
+  }
+
+  .logo .punk {
+    color: var(--signal);
+    display: inline-block;
+    transform: rotate(-2deg);
+    transform-origin: bottom left;
+  }
+
+  /* ——————————————————————————————————————— */
+  /* TAGLINE */
+  /* ——————————————————————————————————————— */
+
+  .tagline {
+    font-size: clamp(18px, 2.5vw, 26px);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--cream);
+    margin-bottom: 40px;
+    line-height: 1.2;
+  }
+
+  /* ——————————————————————————————————————— */
+  /* RULE — signal accent */
+  /* ——————————————————————————————————————— */
+
+  .rule {
+    width: 64px;
+    height: 2px;
+    background: var(--signal);
+    margin-bottom: 40px;
+  }
+
+  /* ——————————————————————————————————————— */
+  /* BODY */
+  /* ——————————————————————————————————————— */
+
+  .ethos {
+    max-width: 520px;
+  }
+
+  .ethos p {
+    font-size: 17px;
+    line-height: 1.75;
+    color: #AAAAAA;
+    margin-bottom: 20px;
+  }
+
+  .ethos p:last-child {
+    margin-bottom: 0;
+  }
+
+  .ethos strong {
+    color: var(--cream);
+    font-weight: 700;
+  }
+
+  /* ——————————————————————————————————————— */
+  /* PILLARS */
+  /* ——————————————————————————————————————— */
+
+  .pillars {
+    display: flex;
+    gap: 60px;
+    margin-top: 72px;
+  }
+
+  .pillar {
+    flex: 1;
+    max-width: 200px;
+  }
+
+  .pillar-label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--signal);
+    margin-bottom: 12px;
+  }
+
+  .pillar-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #777;
+  }
+
+  /* ——————————————————————————————————————— */
+  /* FOOTER */
+  /* ——————————————————————————————————————— */
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 60px;
+    border-top: 1px solid #1A1A1A;
+  }
+
+  .footer-left {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #444;
+  }
+
+  .footer-handle {
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: var(--gray);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .footer-handle:hover {
+    color: var(--cream);
+  }
+
+  /* ——————————————————————————————————————— */
+  /* MOBILE */
+  /* ——————————————————————————————————————— */
+
+  @media (max-width: 768px) {
+    .page {
+      padding: 48px 32px;
+    }
+
+    .pillars {
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .pillar {
+      max-width: 100%;
+    }
+
+    .footer {
+      flex-direction: column;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .logo {
+      letter-spacing: -2px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .page {
+      padding: 36px 24px;
+    }
+
+    .header-right {
+      display: none;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-label">Surepunk</div>
+      <div class="header-right">AI Strategy</div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="main">
+
+      <!-- LOGO -->
+      <div class="logo" aria-label="SUREPUNK">
+        <span class="sure">SURE</span><span class="punk">PUNK</span>
+      </div>
+
+      <!-- TAGLINE -->
+      <div class="tagline">AI strategy at the decisive point.</div>
+
+      <!-- SIGNAL RULE -->
+      <div class="rule"></div>
+
+      <!-- ETHOS -->
+      <div class="ethos">
+        <p>Most AI strategies spread effort across every priority and wait to see what sticks. <strong>The ones that work don't.</strong></p>
+        <p>They find the single point where concentrated force creates disproportionate effect — and apply everything there.</p>
+      </div>
+
+      <!-- PILLARS -->
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar-label">Clarity</div>
+          <div class="pillar-text">No hedging. No consensus theater. A point of view you can act on.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-label">Precision</div>
+          <div class="pillar-text">The right move at the right moment. Not a roadmap. A decision.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-label">Conviction</div>
+          <div class="pillar-text">Advisors who are sure enough to disagree with you.</div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-left">surepunk.ai</div>
+    <a class="footer-handle" href="https://instagram.com/surepunk.ai" target="_blank" rel="noopener noreferrer">@surepunk.ai</a>
+  </footer>
+
+</div>
+
+</body>
+</html>
